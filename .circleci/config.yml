@@ -40,7 +40,7 @@ jobs:
 
      # deploy the image
      - run: docker push $DOCKER_USER/qieam:latest
-     - run: ssh epsi@20.111.37.189 "(docker stop qieam-back || true) && (docker rm -f qieam-back || true) && (docker run --rm --name qieam-back -d -p 4567:4567 $_user)"
+     - run: ssh epsi@20.111.37.189 "(docker stop qieam-back || true) && (docker rm -f qieam-back || true) && (docker run --rm --name qieam-back -d -p 4567:4567 $DOCKER_USER/qiem:latest)"
   
 
 # Invoke jobs via workflows
